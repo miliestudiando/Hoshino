@@ -1,0 +1,516 @@
+:root {
+    --color-nav: #fff;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #1F1833;
+    font-size: 16px;
+    cursor: url('assets/images/logo/ai-cursor'), auto;
+}
+
+#header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* Empuja el logo a la izquierda y nav a la derecha */
+    padding: 10px 20px;
+}
+
+/* Estilos para el Logo y el nombre */
+#header-container #logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre la imagen y el texto P */
+    color: #fff;
+}
+
+#header-container #logo img {
+    height: 50px;
+    /* Ajusta según necesites */
+}
+
+/* ============================================================
+   MENÚ DE NAVEGACIÓN
+   Paleta del sitio: fondo #1F1833, acento #7A5AC7, hover #F46AA8
+   ============================================================ */
+
+/* Contenedor del nav */
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1F1833;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* Lista de ítems */
+#main-nav .nav-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+}
+
+/* Ítems con submenú */
+#main-nav .nav-menu>li {
+    position: relative;
+}
+
+/* Enlaces del menú principal */
+#main-nav .nav-menu>li>a {
+    display: inline-block;
+    font-size: 0.9375rem;
+    padding: 0.9375rem;
+    text-decoration: none;
+    color: #7A5AC7;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#main-nav .nav-menu>li>a:hover {
+    background-color: #F46AA8;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Chevron */
+#main-nav .nav-menu>li>a .chevron {
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+}
+
+#main-nav .nav-menu>li.open>a .chevron {
+    transform: rotate(180deg);
+}
+
+/* Submenú desplegable */
+#main-nav .submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background-color: #352953;
+    border: 1px solid #7A5AC7;
+    border-radius: 8px;
+    min-width: 160px;
+    list-style: none;
+    padding: 6px;
+    z-index: 999;
+}
+
+#main-nav .nav-menu>li.open .submenu {
+    display: block;
+}
+
+#main-nav .submenu li a {
+    display: block;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #7A5AC7;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+#main-nav .submenu li a:hover {
+    background-color: #F46AA8;
+    color: #fff;
+    transform: translateX(3px);
+}
+
+/* Hamburguesa — oculto en desktop */
+#main-nav .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #7A5AC7;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+#main-nav .menu-toggle:hover {
+    color: #F46AA8;
+}
+
+/* ============================================================
+   HERO BANNER
+   ============================================================ */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 60px 40px;
+    background-color: #1F1833;
+    min-height: 420px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.hero-text .hero-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #F46AA8;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
+.hero-text h1 span {
+    color: #7A5AC7;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: #b8a8d8;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.hero-text .hero-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #7A5AC7;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.hero-text .hero-btn:hover {
+    background-color: #F46AA8;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 340px;
+    max-width: 110%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* FIN DE HERO */
+.linea-divisora {
+    height: 2px;
+    /* Grosor de la línea */
+    background-color: #7A5AC7;
+    /* El color morado de tu paleta */
+    width: 100%;
+    /* O puedes usar un porcentaje menor (ej. 80%) si no la quieres de lado a lado */
+    max-width: 1200px;
+    /* Limita el ancho máximo en pantallas muy grandes */
+    margin: 20px auto;
+    /* 20px de espacio arriba/abajo y 'auto' para centrarla si el 'width' es menor a 100% */
+    border-radius: 2px;
+    /* Suaviza un poco las esquinas de la línea */
+    opacity: 0.6;
+    /* Le da una ligera transparencia para que no sea tan chillona */
+}
+
+ul.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.gallery > li {
+    flex: 0 0 200px;
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    ul.gallery > li {
+        flex: 0 0 calc(50% - 0.625rem);
+        width: calc(50% - 0.625rem);
+    }
+}
+
+@media (max-width: 480px) {
+    ul.gallery > li {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+.anime-card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #F46AA8;
+    background: #7A5AC7;
+    cursor: pointer;
+}
+
+.anime-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    /* como se acomoda en la box */
+    object-fit: cover;
+    display: block;
+    transition: filter 0.35s ease;
+}
+
+.anime-card:hover img {
+    filter: brightness(0.25);
+}
+
+.card-overlay-min {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 12px 14px;
+    background: linear-gradient(to top, rgba(31, 24, 51, 0.92) 70%, transparent);
+    transition: opacity 0.3s ease;
+}
+
+.anime-card:hover .card-overlay-min {
+    opacity: 0;
+}
+
+.card-overlay-min h5 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.stars-sm {
+    color: #ffc107;
+    font-size: 12px;
+}
+
+.card-overlay-full {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.anime-card:hover .card-overlay-full {
+    opacity: 1;
+}
+
+.card-overlay-full h5 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.genre-tag {
+    display: inline-block;
+    background: rgba(122, 90, 199, 0.5);
+    color: #e0d4ff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 3px 6px 0;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.detail-row i {
+    color: #F46AA8;
+}
+
+.stars-full {
+    color: #ffc107;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.date-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 12px;
+    background: #F46AA8;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+/* Redirección a Anilist */
+.card-link:hover {
+    background: #d94f8c;
+}
+
+.comment-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    background: rgba(31, 24, 51, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.comment-btn:hover {
+    background: rgba(244, 106, 168, 0.8);
+}
+
+/* BOTÓN FLOTANTE DE GITHUB */
+.btn-flotante {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde la parte inferior */
+    right: 20px;
+    /* Distancia desde la derecha */
+    width: 60px;
+    height: 60px;
+    background-color: #24292e;
+    /* El color oscuro característico de GitHub */
+    color: #ffffff;
+    /* Color del icono */
+    border-radius: 50%;
+    /* Hace que el botón sea completamente redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    /* Tamaño del icono */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para darle profundidad */
+    z-index: 1000;
+    /* Asegura que quede por encima de otros elementos */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.btn-flotante:hover {
+    transform: scale(1.1);
+    /* Se agranda un poco */
+    background-color: #2f363d;
+    /* Un tono gris un poco más claro */
+}
+
+/* ============================================================
+   RESPONSIVE — Menú y Hero
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Menú mobile */
+    #main-nav .menu-toggle {
+        display: block;
+    }
+
+    #main-nav .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1F1833;
+        border: 1px solid #7A5AC7;
+        padding: 6px;
+        z-index: 998;
+    }
+
+    #main-nav .nav-menu.open {
+        display: flex;
+    }
+
+    #main-nav .submenu {
+        position: static;
+        border: none;
+        background-color: transparent;
+        padding-left: 12px;
+    }
+
+    /* Hero mobile: apila texto arriba, gif abajo */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image img {
+        width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+}
